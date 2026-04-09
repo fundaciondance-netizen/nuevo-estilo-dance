@@ -13,6 +13,21 @@ function CTAButton({ href, label, variant = "primary" }) {
       ? "bg-[#f97f09] text-white hover:bg-[#d35121] hover:scale-105"
       : "border border-[#f97f09] text-white hover:bg-[#f97f09] hover:text-white hover:scale-105";
 
+  const isExternal = href.startsWith("http");
+
+  if (isExternal) {
+    return (
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={`${base} ${styles}`}
+      >
+        {label}
+      </a>
+    );
+  }
+
   return (
     <Link href={href} className={`${base} ${styles}`}>
       {label}
@@ -26,7 +41,7 @@ export function DanceNavbar() {
   const menuRef = useRef(null);
 
   const links = [
-    ["Inicio", "#inicio"],
+    ["Inicio", "/"],
     ["Quienes somos", "#nosotros"],
     ["Lineas de accion", "#lineas"],
     ["Testimonios", "#testimonios"],
@@ -105,8 +120,8 @@ export function DanceNavbar() {
           </nav>
 
           <div className="flex items-center gap-3">
-            <CTAButton href="#clases" label="Ver clases" variant="secondary" />
-            <CTAButton href="#contacto" label="Inscribirme" variant="primary" />
+            <CTAButton href="/servicios" label="Ver clases" variant="secondary" />
+            <CTAButton href="https://wa.me/573186234832?text=Quiero%20saber%20mas%20sobre%20tu%20academia" label="Inscribirme" variant="primary" />
           </div>
         </div>
 
@@ -146,8 +161,8 @@ export function DanceNavbar() {
 
           {/* BOTONES */}
           <div className="flex flex-col gap-4 pt-4 border-t border-white/10">
-            <CTAButton href="#clases" label="Ver clases" variant="secondary" />
-            <CTAButton href="#contacto" label="Inscribirme" variant="primary" />
+            <CTAButton href="/servicios" label="Ver clases" variant="secondary" />
+            <CTAButton href="https://wa.me/573186234832?text=Quiero%20saber%20mas%20sobre%20tu%20academia" label="Inscribirme" variant="primary" />
           </div>
 
         </div>

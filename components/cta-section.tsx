@@ -69,21 +69,21 @@ export function CTASection() {
         </div>
       </div>
 
-      {/* WAVE NEGRO RESPONSIVE */}
-      <div className="absolute -bottom-1 left-0 right-0">
+      <div className="absolute -bottom-1 left-0 w-full h-50">
         <svg
-          className="w-full h-auto"
+          className="w-full h-full"
           viewBox="0 0 1440 200"
           preserveAspectRatio="none"
-          xmlns="http://www.w3.org/2000/svg"
         >
           <path
-            d="M0,120 C360,200 720,40 1080,120 L1440,160 L1440,200 L0,200 Z"
+            d="M0,100 
+              C240,180 480,20 720,100 
+              C960,180 1200,20 1440,100 
+              L1440,200 L0,200 Z"
             fill="#000000"
           />
         </svg>
       </div>
-
     </section>
   )
 }

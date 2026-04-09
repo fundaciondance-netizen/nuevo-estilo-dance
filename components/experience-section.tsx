@@ -8,7 +8,7 @@ import { Check, ArrowRight } from "lucide-react"
 const experiences = [
   {
     title: "Shows y Eventos",
-    image: "/images/experience/shows-e.webp",
+    image: "/images/experience/shows-e-new.webp",
     description: "Experiencias escénicas diseñadas para impactar y entretener.",
     features: [
       "Shows temáticos (Mario, Cazafantasmas)",

@@ -31,7 +31,7 @@ const actionLines = [
     icon: Briefcase,
     title: "Emprendimiento",
     description: "Formación en gestión cultural y emprendimiento. Construye tu carrera profesional en la industria de la danza.",
-    image: "/images/entrepreneurship-img.webp",
+    image: "/images/entrepreneurship-new.webp",
     href: "#emprendimiento",
   },
   {
