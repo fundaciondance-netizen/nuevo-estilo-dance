@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://nuevoestilodance.com"),
+  metadataBase: new URL("https://www.nuevoestilodance.com"),
 
   title: "Academia de danza urbana en Cali | Nuevo Estilo Dance",
   description:
@@ -33,23 +33,29 @@ export const metadata: Metadata = {
   ],
 
   authors: [{ name: "Nuevo Estilo Dance" }],
+  creator: "Nuevo Estilo Dance",
+
+  robots: {
+    index: true,
+    follow: true,
+  },
 
   icons: {
-    icon: "/Logo.png",
-    apple: "/Logo.png",
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
   },
 
   openGraph: {
     title: "Academia de danza urbana en Cali | Nuevo Estilo Dance",
     description:
       "Transforma tu mente y tu cuerpo con clases de danza urbana en Cali. Vive la experiencia.",
-    url: "https://nuevoestilodance.com",
+    url: "https://www.nuevoestilodance.com",
     siteName: "Nuevo Estilo Dance",
     locale: "es_CO",
     type: "website",
     images: [
       {
-        url: "https://nuevoestilodance.com/Logo.png",
+        url: "https://www.nuevoestilodance.com/Logo.png",
         width: 1200,
         height: 630,
         alt: "Nuevo Estilo Dance",
@@ -62,7 +68,7 @@ export const metadata: Metadata = {
     title: "Academia de danza urbana en Cali | Nuevo Estilo Dance",
     description:
       "Transforma tu mente y tu cuerpo con clases de danza urbana en Cali. Vive la experiencia.",
-    images: ["https://nuevoestilodance.com/Logo.png"],
+    images: ["https://www.nuevoestilodance.com/Logo.png"],
   },
 };
 
@@ -78,7 +84,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col bg-black text-white">
         
-        {/* 🔥 SCHEMA SEO (Google entiende tu negocio) */}
+        {/* 🔥 SCHEMA SEO COMPLETO */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -86,9 +92,9 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "DanceSchool",
               name: "Nuevo Estilo Dance",
-              url: "https://nuevoestilodance.com",
-              logo: "https://nuevoestilodance.com/Logo.png",
-              image: "https://nuevoestilodance.com/Logo.png",
+              url: "https://www.nuevoestilodance.com",
+              logo: "https://www.nuevoestilodance.com/Logo.png",
+              image: "https://www.nuevoestilodance.com/Logo.png",
               description:
                 "Academia de danza urbana en Cali para niños, jóvenes y adultos.",
               address: {
