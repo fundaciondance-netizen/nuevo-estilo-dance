@@ -3,22 +3,44 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, MessageCircleMore } from "lucide-react";
+import { useEffect, useState } from "react";
 
 export function HeroSection() {
+  const images = [
+    "/hero_1.webp",
+    "/hero_2.webp",
+    "/hero_4.webp",
+  ];
+
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % images.length);
+    }, 4500); // tiempo entre slides
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section
       id="inicio"
       className="relative min-h-screen w-full overflow-hidden bg-black"
     >
-      {/* Background image */}
+      {/* Background slider */}
       <div className="absolute inset-0">
-        <Image
-          src="/hero-dance-img.webp"
-          alt="Academia de danza urbana en Cali"
-          fill
-          priority
-          className="object-cover object-center"
-        />
+        {images.map((img, index) => (
+          <Image
+            key={index}
+            src={img}
+            alt="Academia de danza urbana en Cali"
+            fill
+            priority={index === 0}
+            className={`object-cover object-center transition-opacity duration-1000 ${
+              index === current ? "opacity-100" : "opacity-0"
+            }`}
+          />
+        ))}
 
         {/* Overlay */}
         <div className="absolute inset-0 bg-linear-to-l from-black/85 via-black/65 to-black/40" />
@@ -60,19 +82,18 @@ export function HeroSection() {
         </div>
       </div>
 
-      {/* Wave Shape FIXED */}
-      {/* Wave Shape */}
+      {/* Wave */}
       <div className="pointer-events-none absolute bottom-0 left-0 right-0 z-20 leading-none">
         <svg
-            viewBox="0 0 1440 120"
-            xmlns="http://www.w3.org/2000/svg"
-            className="block w-full h-30 align-bottom"
-            preserveAspectRatio="none"
+          viewBox="0 0 1440 120"
+          xmlns="http://www.w3.org/2000/svg"
+          className="block w-full h-30 align-bottom"
+          preserveAspectRatio="none"
         >
-            <path
+          <path
             d="M0 120L60 110C120 100 240 80 360 70C480 60 600 60 720 65C840 70 960 80 1080 85C1200 90 1320 90 1380 90L1440 90V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z"
             fill="#ffffff"
-            />
+          />
         </svg>
       </div>
     </section>

@@ -14,9 +14,15 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://nuevoestilodance.com"),
+
   title: "Academia de danza urbana en Cali | Nuevo Estilo Dance",
   description:
     "Academia de danza urbana en Cali para niños, jóvenes y adultos. Vive clases de baile que transforman tu confianza, disciplina y expresión.",
+
+  alternates: {
+    canonical: "/",
+  },
+
   keywords: [
     "academia de danza en Cali",
     "danza urbana en Cali",
@@ -25,12 +31,14 @@ export const metadata: Metadata = {
     "escuela de danza urbana Cali",
     "aprender a bailar en Cali",
   ],
+
   authors: [{ name: "Nuevo Estilo Dance" }],
+
   icons: {
-    icon: "/Logo.png", // Favicon normal
-    apple: "/Logo.png", // Icono Apple
-    shortcut: "/Logo.png", // Opcional, para Windows y navegadores
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
   },
+
   openGraph: {
     title: "Academia de danza urbana en Cali | Nuevo Estilo Dance",
     description:
@@ -41,32 +49,61 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/Logo.png",
+        url: "https://nuevoestilodance.com/Logo.png",
         width: 1200,
         height: 630,
         alt: "Nuevo Estilo Dance",
       },
     ],
   },
+
   twitter: {
     card: "summary_large_image",
     title: "Academia de danza urbana en Cali | Nuevo Estilo Dance",
     description:
       "Transforma tu mente y tu cuerpo con clases de danza urbana en Cali. Vive la experiencia.",
-    images: ["/Logo.png"],
+    images: ["https://nuevoestilodance.com/Logo.png"],
   },
 };
+
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html
       lang="es"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-black text-white">
+        
+        {/* 🔥 SCHEMA SEO (Google entiende tu negocio) */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "DanceSchool",
+              name: "Nuevo Estilo Dance",
+              url: "https://nuevoestilodance.com",
+              logo: "https://nuevoestilodance.com/Logo.png",
+              image: "https://nuevoestilodance.com/Logo.png",
+              description:
+                "Academia de danza urbana en Cali para niños, jóvenes y adultos.",
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Cali",
+                addressCountry: "CO",
+              },
+              sameAs: [
+                "https://instagram.com/nuevoestilodance",
+                "https://tiktok.com/@nuevoestilodance2026",
+              ],
+            }),
+          }}
+        />
+
         {children}
       </body>
     </html>
