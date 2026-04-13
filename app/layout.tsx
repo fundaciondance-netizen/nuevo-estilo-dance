@@ -19,6 +19,9 @@ export const metadata: Metadata = {
   description:
     "Academia de danza urbana en Cali para niños, jóvenes y adultos. Vive clases de baile que transforman tu confianza, disciplina y expresión.",
 
+  verification: {
+    google: "Ixrval0XRMp-fZLeabV_6tAMPFnVMR3PzC_mkM2qf9o",
+  },
   alternates: {
     canonical: "/",
   },
